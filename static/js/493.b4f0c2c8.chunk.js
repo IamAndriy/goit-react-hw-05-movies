@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgoit_react_hw_04_images=self.webpackChunkgoit_react_hw_04_images||[]).push([[493],{493:function(e,t,a){a.r(t);var n=a(184);t.default=function(){return(0,n.jsx)(n.Fragment,{})}}}]);
+//# sourceMappingURL=493.b4f0c2c8.chunk.js.map
