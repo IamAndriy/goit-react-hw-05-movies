@@ -1,41 +1,28 @@
-import { useState } from "react";
-import PropTypes from "prop-types";
-import { SearchBar } from "../SearchBar/SearchBar";
-import { ImageGallery } from "../ImageGallery/ImageGallery";
-import { Modal } from "components/Modal/Modal";
+import { Routes, Route } from "react-router-dom";
+import { lazy } from "react";
+import { SharedLayout} from "../SharedLayout/SharedLayout";
+import NotFound from "pages/NotFound";
+import { paths } from "routes";
+
+const Home = lazy( () => import('../../pages/Home') );
+const Movies = lazy( () => import('../../pages/Movies') );
+const MovieDetails = lazy( () => import('../../pages/MovieDetails') );
+const Cast = lazy( () => import('../../pages/Cast') );
+const Reviews = lazy( () => import('../../pages/Reviews') );
 
 export const App = () => {
 
-    const [filter, setFilter] = useState("");
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [image, setImage] = useState({src: "", alt: ""});
-
-    const onSubmitHandle = (value) =>{
-        if (!value.trim()){
-            alert("The request is empty!");
-        }
-        setFilter(value);
-    }
-
-    const onGalleryClickHandle = ({src, alt}) => {
-        
-        setImage({ src, alt });
-        setIsModalOpen(true);
-    }
-
-    const toggleModal = () => {
-        setIsModalOpen( !isModalOpen );
-    }
-
     return  <>
-                <SearchBar onSubmit={onSubmitHandle} />
-                <ImageGallery filter={filter.trim().toLowerCase()} onGalleryClick={onGalleryClickHandle}/>
-                {isModalOpen && <Modal onClose={toggleModal} image={image}/>}
+                <Routes>
+                    <Route path={paths.HOME} element={<SharedLayout/>}>
+                        <Route index element={<Home/>}/>
+                        <Route path={paths.MOVIES} element={<Movies/>}/>
+                        <Route path={paths.MOVIES_MOVIE_ID} element={<MovieDetails/>}>
+                            <Route path={paths.MOVIE_CAST} element={<Cast/>}/>
+                            <Route path={paths.MOVIE_REVIEWS} element={<Reviews/>}/>
+                        </Route>
+                        <Route path="*" element={<NotFound/>}/>
+                    </Route>                    
+                </Routes>
             </>
-}
-
-App.propTypes = {
-    filter : PropTypes.string,
-    isModalOpen: PropTypes.bool,
-    image: PropTypes.object
 }

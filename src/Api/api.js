@@ -1,15 +1,17 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://pixabay.com/api/';
+axios.defaults.baseURL = 'https://api.themoviedb.org/3';
+axios.defaults.headers={
+    accept: 'application/json',
+    authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0MWU5OGVkNjRhOTMyNTViMWE1OGRkYTBjMmQ3ZjgyZCIsIm5iZiI6MTY4ODEzNTI2MS40ODgsInN1YiI6IjY0OWVlNjVkMDkxZTYyMDEwYzExYTc1YSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.a3L17ajXIWbEuURTA8EQUPauHRGZSTBkQ0zYI6QS9vI',
+}
 axios.defaults.params={
-    key: '35820860-09ae26b0f261a8f2213be3901',
-    image_type : 'photo',
-    orientation : 'horizontal',
+    language: 'en-US',
 }
 
-export async function fetchImagesFromAPI (q, page, per_page, abortCtrl) {
-    
-    const response = await axios.get(`?q=${q}&page=${page}&per_page=${per_page}`, {signal: abortCtrl.signal,});
-
-    return response.data;
+export async function getTrendingMovies (abortCtrl) {
+    const { data } = await axios.get(`/trending/movie/day`, {signal: abortCtrl.signal,});
+    return data.results;
 };
+
+
