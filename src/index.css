@@ -28,9 +28,13 @@ img {
   height: auto;
 }
 
-.App {
+/* .app {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 16px;
   padding-bottom: 24px;
+} */
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
 }

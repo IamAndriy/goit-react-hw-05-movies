@@ -3,8 +3,9 @@ import { lazy } from "react";
 import { SharedLayout} from "../SharedLayout/SharedLayout";
 import NotFound from "pages/NotFound";
 import { paths } from "routes";
+import { ToastContainer } from "react-toastify";
 
-const Home = lazy( () => import('../../pages/Home') );
+const Home = lazy( () => import('../../pages/Home/Home') );
 const Movies = lazy( () => import('../../pages/Movies') );
 const MovieDetails = lazy( () => import('../../pages/MovieDetails') );
 const Cast = lazy( () => import('../../pages/Cast') );
@@ -24,5 +25,18 @@ export const App = () => {
                         <Route path="*" element={<NotFound/>}/>
                     </Route>                    
                 </Routes>
+
+                <ToastContainer position="top-right"
+                                autoClose={1000}
+                                hideProgressBar={false}
+                                newestOnTop={false}
+                                closeOnClick={false}
+                                rtl={false}
+                                pauseOnFocusLoss
+                                draggable
+                                pauseOnHover
+                                theme="dark"
+                />
+                
             </>
 }

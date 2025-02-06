@@ -1,8 +1,9 @@
 import { useFetchTrendingMovies } from "hooks/useFetchTrandingMovies";
-import { MovieList } from "../components/MovieList/MovieList";
-import { Loader } from "../components/Loader/Loader";
+import { MovieList } from "../../components/MovieList/MovieList";
+import { Loader } from "../../components/Loader/Loader";
 import css from "./Home.module.css";
 
+// get trending movies from API and render Home page with the list of trending movies
 
 const Home = () =>  {
 
