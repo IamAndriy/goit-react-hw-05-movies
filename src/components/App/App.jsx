@@ -22,12 +22,12 @@ export const App = () => {
                             <Route path={paths.MOVIE_CAST} element={<Cast/>}/>
                             <Route path={paths.MOVIE_REVIEWS} element={<Reviews/>}/>
                         </Route>
-                        <Route path="*" element={<NotFound/>}/>
-                    </Route>                    
+                    </Route>
+                    <Route path="*" element={<NotFound/>}/>
                 </Routes>
 
                 <ToastContainer position="top-right"
-                                autoClose={1000}
+                                autoClose={3000}
                                 hideProgressBar={false}
                                 newestOnTop={false}
                                 closeOnClick={false}

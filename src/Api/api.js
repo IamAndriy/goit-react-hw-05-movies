@@ -24,14 +24,27 @@ async function getMoviesByQuery(filter, abortCtrl ) {
 }
 
 async function getMovieDetails(movie_id, abortCtrl ) {
-    axios.defaults.params={ language: 'en-US', }
-    const { data } = await axios.get(`movie/${movie_id}`, {signal: abortCtrl.signal,});
+    axios.defaults.params={ language: 'en-US', };
+    const {data} = await axios.get(`movie/${movie_id}`, {signal: abortCtrl.signal,});
     return data;
 }
 
+async function getMovieCast(movie_id, abortCtrl ) {
+    axios.defaults.params={ language: 'en-US', }
+    const { data } = await axios.get(`movie/${movie_id}/credits`, {signal: abortCtrl.signal,});
+    return data.cast;
+}
+
+async function getMovieReviews(movie_id, abortCtrl ) {
+    axios.defaults.params={ language: 'en-US', }
+    const { data } = await axios.get(`movie/${movie_id}/reviews`, {signal: abortCtrl.signal,});
+    return data.results;
+}
 
 export {
     getTrendingMovies,
     getMoviesByQuery,
     getMovieDetails,
+    getMovieCast,
+    getMovieReviews,
 }

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getTrendingMovies} from "../Api/api";
+import { getTrendingMovies} from "../api/api";
 
 export const useFetchTrendingMovies = () => {
 
@@ -28,7 +28,7 @@ export const useFetchTrendingMovies = () => {
                 setList(movieList);
             }catch(err){
                 if (!abortCtrl.signal?.aborted){
-                    setError(err);
+                    setError(err.message);
                 }
             }finally{
                 setIsLoading(false);

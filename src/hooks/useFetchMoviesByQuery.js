@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { getMoviesByQuery} from "../Api/api";
+import { getMoviesByQuery} from "../api/api";
 
 export const useFetchMoviesByQuery = () => {
 
@@ -18,8 +18,8 @@ export const useFetchMoviesByQuery = () => {
             try{
                 setIsLoading(true);
                 const data = await getMoviesByQuery(query, abortCtrl);
-                if (data.length === 0){ 
-                        setError("Opps! Something went wrong. Try reload the page.");
+                if (query && data.length === 0){
+                    setError(`We didn't find any movie for your query "${query}"`);
                 }
                 const movieList = data.map(({id, title, release_date}) => {
                                                 return {
@@ -31,7 +31,7 @@ export const useFetchMoviesByQuery = () => {
                 setList(movieList);
             }catch(err){
                 if (!abortCtrl.signal?.aborted){
-                    setError(err);
+                    setError(err.message);
                 }
             }finally{
                 setIsLoading(false);

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
+import css from "./SearchForm.module.css";
 
 export const SearchForm = ({onSubmit}) => {
 
@@ -18,14 +19,15 @@ export const SearchForm = ({onSubmit}) => {
         setQuery(target.value);
     }
 
-    return  <form onSubmit={onSubmitHandle}>
+    return  <form onSubmit={onSubmitHandle} className={css.form}>
                 <input 
+                    className={css.input}
                     id="searchQuery" 
                     type="text" 
                     value={query} 
                     placeholder="search movie" 
                     onChange={onChangeQuery}
                 />
-                <button type="submit">Search</button>
+                <button className={css.btn} type="submit">Search</button>
             </form>
 }

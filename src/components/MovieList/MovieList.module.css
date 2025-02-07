@@ -1,14 +1,12 @@
+
 .list{
-    list-style: none;
+    /* list-style: none; */
 }
 .li{
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     
     &:not(:last-child){
-        margin-bottom: 10px;
+        margin-bottom: 7px;
     }
-}
-.link{
-    
 }
