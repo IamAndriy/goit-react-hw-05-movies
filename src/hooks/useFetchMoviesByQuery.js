@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { getMoviesByQuery} from "../api/api";
+import { getMoviesByQuery} from "api/api";
 
 export const useFetchMoviesByQuery = () => {
 
