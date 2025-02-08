@@ -11,4 +11,13 @@
 }
 .btn{
     padding: 5px 10px;
+    background-color: var(--back-color2);
+    box-shadow: 1px 1px 1px grey;
+    border: none;
+    cursor: pointer;
+
+    &:hover,
+    &:focus{
+        box-shadow: 2px 2px 2px grey;
+    }
 }

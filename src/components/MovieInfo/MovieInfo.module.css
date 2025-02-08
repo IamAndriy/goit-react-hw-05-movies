@@ -50,4 +50,10 @@
 }
 .link{
     line-height: 1.3;
+    text-decoration: none;
+
+    &:hover,
+    &:focus{
+        text-decoration: underline;
+    }
 }

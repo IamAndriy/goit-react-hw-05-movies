@@ -1,12 +1,21 @@
 
-.list{
-    /* list-style: none; */
-}
 .li{
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
+    line-height: 1.33;
     
     &:not(:last-child){
         margin-bottom: 7px;
+    }
+
+    .link{
+        color: var(--color-text);
+        text-decoration: none;
+        cursor: pointer;
+        
+        &:hover,
+        &:focus{
+            text-decoration: underline;
+        }
     }
 }
