@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { paths } from "routes";
-import emptyPoster from "../../images/poster.png";
+import emptyPoster from "../../images/empty_poster.png";
 import css from "./MovieInfo.module.css";
 
 export const MovieInfo = ({movie}) => {

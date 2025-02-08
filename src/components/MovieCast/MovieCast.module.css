@@ -1,6 +1,9 @@
 .castDiv{
     padding-top: 30px;
 }
+.ul{
+    list-style: none;
+}
 .li{
     &:not(:last-child){
         margin-bottom: 20px;
