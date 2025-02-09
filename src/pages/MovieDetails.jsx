@@ -12,7 +12,7 @@ const MovieDetails = () => {
 
     const location = useLocation();
     const refLocation = useRef(location?.state?.from ?? paths.HOME);
-      
+
     return  <main>
                 <section>
                     <div className="container">

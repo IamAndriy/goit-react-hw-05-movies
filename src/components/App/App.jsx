@@ -5,7 +5,7 @@ import NotFound from "pages/NotFound";
 import { paths } from "routes";
 import { ToastContainer } from "react-toastify";
 
-const Home = lazy( () => import('../../pages/Home/Home') );
+const Home = lazy( () => import('../../pages/Home') );
 const Movies = lazy( () => import('../../pages/Movies') );
 const MovieDetails = lazy( () => import('../../pages/MovieDetails') );
 const Cast = lazy( () => import('../../pages/Cast') );

@@ -1,5 +1,7 @@
 import css from "./MovieCast.module.css";
 import EmptyPhoto from "../../images/empty_photo.png";
+import PropTypes from "prop-types";
+
 
 export const MovieCast = ({list}) =>{
 
@@ -26,4 +28,8 @@ export const MovieCast = ({list}) =>{
                 }
                 </ul>
             </div>
+}
+
+MovieCast.propTypes = {
+    list: PropTypes.arrayOf(PropTypes.object),
 }

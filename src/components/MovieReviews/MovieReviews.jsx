@@ -1,4 +1,6 @@
 import css from "./MovieReviews.module.css";
+import PropTypes from "prop-types";
+
 
 export const MovieReviews = ({list}) =>{
 
@@ -14,4 +16,8 @@ export const MovieReviews = ({list}) =>{
                     }
                 </ul>
             </div>
+}
+
+MovieReviews.propTypes = {
+    list: PropTypes.arrayOf(PropTypes.object),
 }

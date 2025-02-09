@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { paths } from "routes";
 import emptyPoster from "../../images/empty_poster.png";
 import css from "./MovieInfo.module.css";
+import PropTypes from "prop-types";
+
 
 export const MovieInfo = ({movie}) => {
 
@@ -53,4 +55,8 @@ export const MovieInfo = ({movie}) => {
                 </div>
                 
             </>
+}
+
+MovieInfo.propTypes = {
+    movie: PropTypes.object,
 }

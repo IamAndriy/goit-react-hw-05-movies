@@ -1,7 +1,7 @@
 import { useFetchTrendingMovies } from "hooks/useFetchTrandingMovies";
-import { MovieList } from "../../components/MovieList/MovieList";
-import { Loader } from "../../components/Loader/Loader";
-import css from "./Home.module.css";
+import { MovieList } from "../components/MovieList/MovieList";
+import { Loader } from "../components/Loader/Loader";
+
 
 const Home = () =>  {
 
@@ -11,7 +11,7 @@ const Home = () =>  {
                 <section>
                     <div className="container">
 
-                        <h1 className={css.title}>Trending movies</h1>
+                        <h1>Trending movies</h1>
 
                         { (list.length > 0) && <MovieList movies={list}/> }
 
